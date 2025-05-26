@@ -1,0 +1,21 @@
+{
+  "name": "porfolio-lucas",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@fontsource/poppins": "^5.2.6",
+    "@tailwindcss/vite": "^4.1.7",
+    "astro": "^5.8.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.3",
+    "tailwindcss": "^4.1.7"
+  }
+}
