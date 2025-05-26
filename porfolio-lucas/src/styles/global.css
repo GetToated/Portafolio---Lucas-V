@@ -1,1 +1,11 @@
 @import "tailwindcss";
+/* Estilo inicial para los elementos que queremos hacer fade-in */
+.fade-in-element {
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out; /* 0.8s de duración, función de aceleración suave */
+}
+
+/* Clase para activar el fade-in (puedes añadirla con JavaScript o directamente en el HTML si quieres que empiece al cargar) */
+.fade-in-active {
+  opacity: 1;
+}
