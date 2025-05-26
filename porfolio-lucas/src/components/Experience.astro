@@ -1,0 +1,25 @@
+---
+import ExperienceItem from "./ExperienceItem.astro"
+
+const EXPERIENCE = [
+    {
+        date: 'Marzo 2025 - Actualmente',
+        title: 'Practicas DAW, maquetación en Ávoris',
+        description: 'dqwijewgowjejgwergjwoigjwjigowgjrgkgrgrjkogjrs.',
+
+    },
+    {
+        date: 'Marzo 2023 - Junio 2023',
+        title: 'Practicas Grado Medio en Sermicro',
+        description: 'wqrdqfqwegfqewgq.',
+    }
+]
+---
+<ol class="relative border-s border-white dark:border-white">
+    {
+        EXPERIENCE.map(experience => (
+            <li class="ps-6"> <ExperienceItem {...experience} />
+            </li>
+        ))
+    }
+</ol>
