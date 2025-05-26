@@ -1,54 +1,116 @@
 ---
 import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-import Badge from '../components/Badge.astro'
+import Badge from '../components/Badge.astro';
 import Github from '../components/icons/Github.astro';
 import Social from '../components/Social.astro';
-import Linkedin from '../components/icons/Linkedin.astro'
+import Linkedin from '../components/icons/Linkedin.astro';
 import Mail from '../components/icons/Mail.astro';
 import Experience from '../components/Experience.astro';
 import SectionContainer from '../components/SectionContainer.astro';
 import Experienceicon from '../components/icons/Experienceicon.astro';
 import Skills from '../components/Skills.astro';
-
-
+import Projects from '../components/Projects.astro';
+import AboutMe from '../components/AboutMe.astro';
+import ContactForm from '../components/ContactForm.astro';
+import Footer from '../components/Footer.astro';
 ---
 
 <Layout title="Portfolio de Lucas - Desarrollador Frontend" description="dawdaf">
-	<main>
-		<SectionContainer class="py-24 pb-20">
-			<h1 class="text-white text-5xl font-bold flex flex-row gap-x-4">Hei, I'm Lucas 
-				<a href="https://github.com/GetToated" class="flex justify-center items-center" target="_blank" rel="noopener">
-					<Badge>Disponible para trabajar.</Badge></h1>
-				</a>
-			<h2 class="text-2xl ">Desarrollador Trainer a punto de finalizar practicas del <span class="text-yellow-200/90">modulo superior DAW</span>. <span class="text-red-100/90">
-				Con interes en el desarrollo frontend.</span></h2>
+  <main>
+    <SectionContainer class="pb-23 pt-20">
+      <img
+        class="rounded-full w-12 h-12 mb-2"
+        src="../../public/assets/logo.jpg"
+        alt="foto"
+      />
+      <h1 class="text-white text-5xl font-bold flex flex-row gap-x-4 mb-2 typing-animation" style="--typing-length: 16;">
+        Hola, Soy Lucas!
+        <a
+          href="https://github.com/GetToated"
+          class="flex justify-center items-center"
+          target="_blank"
+          rel="noopener"
+        >
+          <Badge>Disponible para trabajar.</Badge>
+        </a>
+      </h1>
+      <h2 class="text-2xl ">
+        Trainer a punto de finalizar practicas del
+        <span class="text-yellow-200/90">Grado superior DAW</span>.
+        <span class="text-red-100/90">
+          Con interes en el desarrollo frontend.
+        </span>
+      </h2>
 
-			<nav class="flex gap-x-2 mt-10">
-				<Social href="https://github.com/GetToated">
-					<Github class="size-6" />
-					Github</a>
-				</Social>	
-				<Social href="https://www.linkedin.com/in/lucas-v%C3%A1zquez-segura-4a46b135a/">
-					<Linkedin class="size-6" />
-					LinkedIn</a>
-				</Social>	
-				<Social href="">
-					<Mail class="size-6" />
-					lucasfpinformatica@gmail.com</a>
-				</Social>	
-			</nav>
-		</SectionContainer>
-		<SectionContainer  id="experience">
-			
-			<h2 class="font-semibold text-2xl mb-7 flex gap-x-3 items-center">
-				<Experienceicon class="size-8 " />
-				Mi Experiencia
-				
-			</h2>
-			<Experience />
-		</SectionContainer>
+      <nav class="flex gap-x-2 mt-10">
+        <Social href="https://github.com/GetToated">
+          <Github class="size-6" />
+          Github
+        </Social>
+        <Social href="https://www.linkedin.com/in/lucas-v%C3%A1zquez-segura-4a46b135a/">
+          <Linkedin class="size-6" />
+          LinkedIn
+        </Social>
+        <Social href="">
+          <Mail class="size-6" />
+          lucasfpinformatica@gmail.com
+        </Social>
+      </nav>
+    </SectionContainer>
+    <AboutMe />
+    <SectionContainer class="pb-23" id="experience">
+      <h2 class="font-semibold text-2xl mb-7 flex gap-x-3 items-center">
+        <Experienceicon class="size-8 " />
+        Mi Experiencia
+      </h2>
+      <Experience />
+    </SectionContainer>
 
-		<Skills />
-	</main>
+    <Skills />
+    <Projects />
+    <ContactForm />
+    <Footer />
+  </main>
+
+  <style>
+    .typing-animation {
+      overflow: hidden;
+      white-space: nowrap;
+      border-right: .15em solid orange; /* Efecto cursor */
+      animation: typing 3s steps(var(--typing-length), end), blink-caret .75s step-end infinite;
+    }
+
+    @keyframes typing {
+      from { width: 0 }
+      to { width: calc(var(--typing-length) * 1ch); }
+    }
+
+    @keyframes blink-caret {
+      from, to { border-color: transparent }
+      50% { border-color: orange; }
+    }
+  </style>
 </Layout>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    document.body.classList.add('fade-in-page');
+  });
+</script>
+
+<style is:global>
+  @keyframes fadeInPage {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  body.fade-in-page {
+    opacity: 0;
+    animation: fadeInPage 0.8s ease-in-out forwards;
+  }
+</style>
