@@ -1,12 +1,116 @@
-<header class="flex justify-between items-center py-5 w-full mx-auto">
-    
+---
+import MenuIcon from '../components/icons/Menu.astro'; 
 
-    <nav class="flex flex-row gap-x-10 opacity-70 mx-auto ">
-        <a class="#" href="#">Inicio</a>
-        <a href="#about">Sobre Mi</a>
-        <a href="#experience">Experiencia</a>
-        <a href="#skills">Tecnologías</a>
-        <a href="#projects">Proyectos</a>
-        <a href="#contact">Contacto</a>
-    </nav>
+const navLinks = [
+  { text: 'Inicio', href: '#' },
+  { text: 'Sobre Mi', href: '#about' },
+  { text: 'Experiencia', href: '#experience' },
+  { text: 'Tecnologías', href: '#skills' },
+  { text: 'Proyectos', href: '#projects' },
+  { text: 'Contacto', href: '#contact' },
+];
+---
+
+<header class="flex justify-between items-center py-5 w-full mx-auto">
+
+
+  <nav class="main-nav flex flex-row gap-x-10 opacity-70 mx-auto">
+    {navLinks.map((link) => (
+      <a href={link.href}>{link.text}</a>
+    ))}
+  </nav>
+
+  <button id="hamburgerBtn" class="hamburger-btn focus:outline-none">
+    <MenuIcon class="h-6 w-6" /> 
+  </button>
+
+  <nav id="mobileNav" class="mobile-nav flex-col absolute top-full left-0 w-full bg-gray-100 shadow-md py-4 gap-y-4 items-center z-10">
+    {navLinks.map((link) => (
+      <a href={link.href} class="block py-2">{link.text}</a>
+    ))}
+  </nav>
 </header>
+
+<style>
+  header {
+    position: relative; 
+  }
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .hamburger-btn {
+    display: none; 
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+   
+    margin:  0 auto;
+  }
+
+  .main-nav {
+    display: flex; 
+  }
+
+  .mobile-nav {
+    display: none;
+  }
+
+  @media (max-width: 680px) {
+  .main-nav {
+    display: none;
+  }
+
+  .hamburger-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .mobile-nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #0f0e12;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding-top: 0; 
+    padding-bottom: 0; 
+    overflow: hidden; 
+    max-height: 0; 
+    z-index: 10;
+    cursor: pointer;
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    transition: max-height 0.3s ease-in-out, padding-top 0.3s ease-in-out, padding-bottom 0.3s ease-in-out; 
+  }
+
+  .mobile-nav.open {
+    max-height: 500px; 
+    padding-top: 1rem; 
+    padding-bottom: 1rem;
+  }
+
+  .mobile-nav a {
+    color: white;
+    padding: 0.5rem 0;
+    width: 100%;
+    text-align: center;
+  }
+}
+</style>
+
+<script>
+  const hamburgerBtn = document.getElementById('hamburgerBtn');
+  const mobileNav = document.getElementById('mobileNav');
+
+  if (hamburgerBtn && mobileNav) {
+    hamburgerBtn.addEventListener('click', () => {
+      mobileNav.classList.toggle('open');
+    });
+  }
+</script>
