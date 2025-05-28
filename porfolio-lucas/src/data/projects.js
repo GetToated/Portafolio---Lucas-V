@@ -5,7 +5,7 @@ export const PROJECTS = [
     technologies: ['Angular', 'HTML', 'CSS', 'TS'], 
     image: '/assets/proyecto1.jpg', 
     github: 'https://github.com/GetToated/ExamenCliente', 
-    liveDemo: 'https://proyecto1.ejemplo.com', 
+    liveDemo: 'https://lively-biscotti-d69812.netlify.app/buscar', 
   },
 
 ];
