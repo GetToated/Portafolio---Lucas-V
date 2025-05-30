@@ -8,7 +8,7 @@ export const PROJECTS = [
     liveDemo: 'https://lively-biscotti-d69812.netlify.app/buscar', 
   },
   {
-    title: 'Lucas Sotre',
+    title: 'Lucas Store',
     description: 'Esta es una tienda web desarrollada con Angular que consume datos de productos desde una API externa llamada FakeStore. Los productos se muestran en tarjetas (cards), cada una con un botón para agregar el artículo al carrito de compras. Tenemos un boton para actualizar y muestre mas cards, hecho con un LIMIT. En la parte superior hay un ícono de carrito que muestra dinámicamente la cantidad total de productos añadidos. Al hacer clic en carrito, el usuario accede a la página donde puede visualizar los productos seleccionados, con la opción de eliminar artículos o ajustar la cantidad mediante botones para aumentar o disminuir unidades. El precio total se actualiza automáticamente según los productos y cantidades en el carrito. Para mejorar la experiencia, se implementó un indicador de carga (loading) mientras se obtienen los datos de la API y durante la navegación entre páginas. Actualmente, la aplicación no es responsive, pero se planea implementar esta funcionalidad próximamente. He seguido un curso/guia para poder seguir aumentando mis conocimientos de Angular!',
     technologies: ['Angular', 'HTML', 'CSS', 'TS', 'Tailwindcss'], 
     image: '/assets/lucas-shop.png', 
